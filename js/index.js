@@ -58,40 +58,5 @@ const products = [
 const [{name: nameComputer, price: priceComputer, quantity: quantityComputer}, {name: namePhone, price: pricePhone, quantity: quantityPhone}, {name: nameTablet, price: priceTablet, quantity: quantityTablet}, {name: nameHeadphones, price: priceHeadphones, quantity: quantityHeadphones}] = prodducts
 console.log(products)
 
-// 7
 
-const account = {
-    balance: 0,
-    transactions: [],
-    getBalance() {
-      return this.balance;
-    },
-    deposit(amount) {
-      if (amount > 0) {
-        this.balance += amount;
-        this.transactions.push({ type: "DEPOSIT", amount });
-        return `Поповнення на ${amount}. Баланс: ${this.balance}`;
-      } else {
-        return "Сума має бути більшою за нуль.";
-      }
-    },
-    withdraw(amount) {
-      if (amount > 0 && amount <= this.balance) {
-        this.balance -= amount;
-        this.transactions.push({ type: "WITHDRAW", amount });
-        return `Знято ${amount}. Баланс: ${this.balance}`;
-      } else if (amount > this.balance) {
-        return "Недостатньо коштів.";
-      } else {
-        return "Сума має бути більшою за нуль.";
-      }
-    },
-    getTransactions() {
-      return this.transactions;
-    },
-  };
-  console.log(account.deposit(500));
-  console.log(account.withdraw(200));
-  console.log("Баланс:", account.getBalance());
-  console.log("Транзакції:", account.getTransactions()); 
   
